@@ -16,7 +16,10 @@
   "autoload": {
     "psr-4": {
       "Pingpong\\Support\\": ""
-    }
+    },
+    "files": [
+      "helpers.php"
+    ]
   },
   "minimum-stability": "stable"
 }
