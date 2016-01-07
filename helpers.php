@@ -115,3 +115,37 @@ if (!function_exists('markdown')) {
         return (new ParsedownExtra())->text($text);
     }
 }
+
+if (!function_exists('route_names')) {
+    /**
+     * @param  string $name
+     * @return array
+     */
+    function route_names($name)
+    {
+        $methods = ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'];
+
+        $names = [];
+
+        foreach ($methods as $method) {
+            $names[$method] = $name.".{$method}";
+        }
+
+        return $names;
+    }
+}
+
+if (!function_exists('_resource')) {
+    /**
+     * @param  string $name
+     * @param  string $controller
+     * @param  array $options
+     * @return void
+     */
+    function _resource($name, $controller, array $options = [])
+    {
+        $default['names'] = route_names($name);
+
+        Route::resource($name, $controller, array_merge($default, $options));
+    }
+}
