@@ -10,8 +10,8 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "illuminate/filesystem": "5.2.*",
-    "illuminate/support": "5.2.*",
+    "illuminate/filesystem": "5.3.*",
+    "illuminate/support": "5.3.*",
     "erusev/parsedown-extra": "0.7.*"
   },
   "autoload": {
